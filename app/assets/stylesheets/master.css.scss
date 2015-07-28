@@ -14,3 +14,15 @@ h1, h2, h3, h4, h5, h6 {
   margin:0;
   padding:0;
 }
+
+body {
+  background: url('/assets/grid_noise.png');
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.navbar.navbar-inverse {
+  background:url('/assets/footer_lodyas.png');
+  border-radius:0px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
