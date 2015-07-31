@@ -8,6 +8,7 @@ class PlacesController < ApplicationController
 
   def show
   	@place = Place.find(params[:id])
+  	@comment = Comment.new
   end
 
 
@@ -54,7 +55,7 @@ class PlacesController < ApplicationController
 	  if @place.user != current_user
 	    return render :text => 'Not Allowed', :status => :forbidden
 	  end
-  
+
   @place.destroy
   redirect_to root_path
   end
