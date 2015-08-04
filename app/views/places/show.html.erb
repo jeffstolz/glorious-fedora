@@ -33,7 +33,7 @@
 
 <!-- begin list of photos -->
 <% @place.photos.each do |photo| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+  <div class="col-xs-12 col-sm-6 col-md-4 text-center show-image-frame">
       <% if photo.present? %>
         <b><%= image_tag photo.picture, :class => 'show-images img-responsive'%></b><br />
         <b><%= photo.caption %></b>
@@ -115,6 +115,7 @@
 </div>
 
   <% if current_user && current_user == @place.user %>
+  <div class="clear"></div>
   <hr />
   <div class="pull-right">
     <button class="btn btn-primary" data-toggle="modal" data-target="#myPictureModal">
