@@ -1,9 +1,16 @@
 <div class="col-xs-10 col-xs-offset-1">
 <% @places.each do |place| %>
   <div class="booyah-box col-xs-10 col-xs-offset-1">
-    <h1><%= link_to place.name, place_path(place) %></h1><br />
-    <i><%= place.address %></i><br />
-    <p><%= place.description %></p>
+  	<% if place.photos.present? %>
+  	  <div class="hidden-xs col-sm-4 col-md-2">
+  	    <%= image_tag place.photos.first.picture, :class => 'index-thumbnail'%>
+  	  </div>
+  	<% end %>
+  	<div class="col-xs-12 col-sm-8 col-md-10">
+	    <h1><%= link_to place.name, place_path(place) %></h1><br />
+	    <i><%= place.address %></i><br />
+	    <p><%= place.description %></p>
+    </div>
 
 <!--    <% if place.user.present? %>
       <small><%= place.user.email %></small>
@@ -21,7 +28,7 @@
 	</div>
 <% end %>
     
-  </div>
+</div>
 
 <% end %>
 
