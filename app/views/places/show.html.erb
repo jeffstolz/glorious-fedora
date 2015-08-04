@@ -31,6 +31,18 @@
 <% end %>
 
 
+<!-- begin list of photos -->
+<% @place.photos.each do |photo| %>
+  <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+      <% if photo.present? %>
+        <b><%= image_tag photo.picture, :class => 'show-images img-responsive'%></b><br />
+        <b><%= photo.caption %></b>
+      <% end %>
+  </div>
+<% end %>
+<!-- end list of photos -->
+
+
 <div class="clear"></div>
 
 <!-- Comments Modal -->
@@ -56,6 +68,7 @@
   </div>
 </div>
 
+<hr />
 <div class="col-xs-10 col-xs-offset-1">
 <h1 class="pull-left">Comments</h1>
 <!-- Button trigger modal -->
@@ -101,23 +114,9 @@
   </div>
 </div>
 
-<!-- begin list of photos -->
-<% @place.photos.each do |photo| %>
-  <div class="col-xs-12 col-sm-6">
-    <blockquote>
-      <% if photo.present? %>
-        <b><%= image_tag photo.picture %></b>
-        <b><%= photo.caption %></b>
-      <% end %>
-    </blockquote>
-  </div>
-<% end %>
-<!-- end list of photos -->
-
-
-<div class="clear"></div>
-  <div class="pull-right">
   <% if current_user && current_user == @place.user %>
+  <hr />
+  <div class="pull-right">
     <button class="btn btn-primary" data-toggle="modal" data-target="#myPictureModal">
       Add a photo
     </button>
