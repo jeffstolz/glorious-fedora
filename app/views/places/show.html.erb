@@ -77,6 +77,29 @@
   </div>
 <% end %>
 
+<!-- begin form for photos -->
+<div class="clear"></div>
+<%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+  <%= f.input :caption %>
+  <br />
+  <%= f.submit "Add a Photo", :class => 'btn btn-primary' %>
+<% end %>
+<!-- end form for photos -->
+
+<!-- begin list of photos -->
+<% @place.photos.each do |photo| %>
+  <div class="col-xs-12 col-sm-6">
+    <blockquote>
+      <% if photo.present? %>
+        <b><%= photo.caption %></b>
+      <% end %>
+    </blockquote>
+  </div>
+<% end %>
+<!-- end list of photos -->
+
+
+
   <div class="pull-right">
   <% if current_user && current_user == @place.user %>
     <%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary' %>
