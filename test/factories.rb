@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :comment do
-    message "This is a sample comment message"
-    rating "one_star"
+  factory :user do
+    email "jstolz123@gmail.com"
+    password "noneyabusiness"
   end
 end
