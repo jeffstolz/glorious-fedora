@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :comment do
-    author "Gary Vaynerchuk"
-    saying "I love people, and the hustle."
+    message "This is a sample comment message"
+    rating "one_star"
   end
 end
