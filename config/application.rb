@@ -23,6 +23,8 @@ module Nomster
     # Add the fonts path
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
 
+    config.action_mailer.default_url_options = { host: 'localhost' }
+
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf )
     
